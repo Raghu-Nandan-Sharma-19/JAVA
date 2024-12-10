@@ -10,17 +10,17 @@ class Test {
     }
 }
 
-class BankAccount {
+class BankAccount1 {
     double balance;
     String accountType;
 
-    public BankAccount(double balance) {
+    public BankAccount1(double balance) {
         System.out.println("Bank account created");
         this.balance = balance;
         this.accountType = "Savings";
     }
 
-    public BankAccount(double balance, String accountType) {
+    public BankAccount1(double balance, String accountType) {
         System.out.println("Bank account created");
         this.balance = balance;
         this.accountType = accountType;
@@ -38,11 +38,11 @@ public class LearnConstructors {
         test.printTest();
         System.out.println();
 
-        BankAccount bankAccount = new BankAccount(10.0);
+        BankAccount1 bankAccount = new BankAccount1(10.0);
         bankAccount.printBalanceAndAccountType();
         System.out.println();
 
-        BankAccount bankAccount2 = new BankAccount(11.1, "Current");
+        BankAccount1 bankAccount2 = new BankAccount1(11.1, "Current");
         bankAccount2.printBalanceAndAccountType();
         System.out.println();
     }

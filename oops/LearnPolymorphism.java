@@ -1,9 +1,9 @@
 package oops;
 
-class Vehicle {
+class Vehicle1 {
     private String numberOfVehicle;
 
-    public Vehicle(String numberOfVehicle) {
+    public Vehicle1(String numberOfVehicle) {
         this.numberOfVehicle = numberOfVehicle;
     }
 
@@ -16,8 +16,8 @@ class Vehicle {
     }
 }
 
-class Car extends Vehicle {
-    public Car(String numberOfVehicle) {
+class Car2 extends Vehicle1 {
+    public Car2(String numberOfVehicle) {
         super(numberOfVehicle);
     }
 
@@ -29,7 +29,7 @@ class Car extends Vehicle {
 
 public class LearnPolymorphism {
     public static void main(String[] args) {
-        Car car = new Car("JK02CH5969");
+        Car2 car = new Car2("JK02CH5969");
         car.printVehicleNumber();
         car.honk();
     }

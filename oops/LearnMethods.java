@@ -1,6 +1,6 @@
 package oops;
 
-class Test {
+class Test1 {
     public int sum(int num1, int num2) {
         return num1 + num2;
     }
@@ -12,7 +12,7 @@ public class LearnMethods {
     }
     public static void main(String[] args) {
         test();
-        Test test = new Test();
+        Test1 test = new Test1();
         System.out.println(test.sum(10, 20));
     }
 }
