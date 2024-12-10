@@ -1,8 +1,8 @@
 package oops;
 
-class Test {
-    public Test() {
-        System.out.println("Test constructor called");
+class Test4 {
+    public Test4() {
+        System.out.println("Test4 constructor called");
     }
 
     public void printTest() {
@@ -34,7 +34,7 @@ class BankAccount1 {
 
 public class LearnConstructors {
     public static void main(String[] args) {
-        Test test = new Test();
+        Test4 test = new Test4();
         test.printTest();
         System.out.println();
 
