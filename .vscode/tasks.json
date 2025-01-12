@@ -10,7 +10,8 @@
                 "java ${relativeFile} < input.txt > output.txt || echo 'Execution failed'"
             ],
             "presentation": {
-                "reveal": "always"
+                "reveal": "never",
+                "panel": "shared"
             },
             "group": {
                 "kind": "build",
@@ -33,4 +34,4 @@
             }
         }
     ]
-}
+  }
