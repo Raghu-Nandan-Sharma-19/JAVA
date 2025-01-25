@@ -2,26 +2,29 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Run Java without .class",
+            "label": "Compile and run",
             "type": "shell",
-            "command": "bash",
+            "command": "",
             "args": [
-                "-c",
-                "java ${relativeFile} < input.txt > output.txt || echo 'Execution failed'"
+                "java",
+                "${relativeFile}",
+                "<",
+                "input.txt",
+                ">",
+                "output.txt"
             ],
             "presentation": {
-                "reveal": "never",
-                "panel": "shared"
+                "reveal": "never"
             },
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
             "problemMatcher": {
-                "owner": "java",
+                "owner": "py",
                 "fileLocation": [
                     "relative",
-                    "${workspaceFolder}"
+                    "${workspaceRoot}"
                 ],
                 "pattern": {
                     "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
@@ -34,4 +37,4 @@
             }
         }
     ]
-  }
+}
