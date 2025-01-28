@@ -6,29 +6,40 @@ import java.util.Scanner;
 public class IntersectionOfTwoSortedArrays {
     private static class Solution {
         public int[] intersectionArray(int[] nums1, int[] nums2) {
+            // declaring a temporary list to store intersection
             ArrayList<Integer> ansList = new ArrayList<>();
             int n1 = nums1.length;
             int n2 = nums2.length;
+            // i and j pointer to iterate the array
             int i = 0;
             int j = 0;
 
+            /* if i is less than size of array 1 and j is less than size of 
+             * array 2
+             */
             while (i < n1 && j < n2) {
+                /* if element in array 1 less than element in array 2 increment
+                 * i pointer
+                 */
                 if (nums1[i] < nums2[j]) {
                     i++;
-                } else if (nums2[j] < nums1[i]) {
+                } else if (nums2[j] < nums1[i]) { // if element in array 2 is less than element in array 1 increment j pointer
                     j++;
-                } else {
+                } else { // else add element from array 1 to list
                     ansList.add(nums1[i]);
-                    i++;
-                    j++;
+                    i++; // increment i pointer
+                    j++; // increment j pointer
                 }
             }
 
+            // taking a ans array
             int[] ans = new int[ansList.size()];
+            // adding elements from temporary list to ans array
             for (int k = 0; k < ansList.size(); k++) {
                 ans[k] = ansList.get(k);
             }
 
+            // returning the ans array
             return ans;
         }
     }
