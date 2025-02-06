@@ -1,4 +1,4 @@
-package oops;
+package oopsBasics;
 
 class Test1 {
     public int sum(int num1, int num2) {

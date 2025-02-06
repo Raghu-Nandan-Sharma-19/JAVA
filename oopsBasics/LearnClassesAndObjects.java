@@ -1,4 +1,4 @@
-package oops;
+package oopsBasics;
 
 class Test {
     public void printTest() {

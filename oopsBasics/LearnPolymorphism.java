@@ -1,4 +1,4 @@
-package oops;
+package oopsBasics;
 
 class Vehicle1 {
     private String numberOfVehicle;

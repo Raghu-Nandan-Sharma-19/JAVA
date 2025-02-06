@@ -1,4 +1,4 @@
-package oops;
+package oopsBasics;
 
 abstract class BankAccount {
     double balance;

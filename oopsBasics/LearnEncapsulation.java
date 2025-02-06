@@ -1,4 +1,4 @@
-package oops;
+package oopsBasics;
 
 class BankAccount2 {
     private double balance;

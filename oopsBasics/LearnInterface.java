@@ -1,4 +1,4 @@
-package oops;
+package oopsBasics;
 
 interface Animal {
     void bark();
