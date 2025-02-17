@@ -10,7 +10,7 @@ public class DoWhileLoop {
         do {
             num = scanner.nextInt();
             System.out.println(num);
-        } while(num != 10);
+        } while (num != 10);
 
         scanner.close();
     }

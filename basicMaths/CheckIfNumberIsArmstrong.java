@@ -12,7 +12,7 @@ class ArmstrongNumber {
         int copyNum = num, sum = 0;
         int countDigits = countDigits(num);
 
-        while(copyNum > 0) {
+        while (copyNum > 0) {
             int currentDigit = copyNum % 10;
             sum += Math.pow(currentDigit, countDigits);
             copyNum /= 10;

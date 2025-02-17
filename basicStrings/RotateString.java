@@ -4,23 +4,23 @@ import java.util.Scanner;
 
 class CheckRotate {
     public boolean rotateString(String s, String goal) {
-        if(s.length() != goal.length()) return false;
+        if (s.length() != goal.length()) return false;
 
         int n = s.length();
 
         Map<Character, Integer> map = new HashMap<>();
 
-        for(int i = 0; i < n; i++) {
-            map.put(s.charAt(i), map.getOrDefault(s.charAt(i), 0)+1);    
+        for (int i = 0; i < n; i++) {
+            map.put(s.charAt(i), map.getOrDefault(s.charAt(i), 0) + 1);    
         }
 
-        for(int i = 0; i < n; i++) {
-            map.put(goal.charAt(i), map.getOrDefault(goal.charAt(i), 0)+1);
+        for (int i = 0; i < n; i++) {
+            map.put(goal.charAt(i), map.getOrDefault(goal.charAt(i), 0) + 1);
         }
 
-        for(Map.Entry<Character, Integer> it : map.entrySet()) {
+        for (Map.Entry<Character, Integer> it : map.entrySet()) {
             int freq = it.getValue();
-            if(freq == 1) {
+            if (freq == 1) {
                 return false;
             }
         }

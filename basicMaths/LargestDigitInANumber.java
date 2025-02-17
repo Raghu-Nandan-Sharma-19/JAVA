@@ -6,9 +6,9 @@ class LargestDigit {
     public int largestDigitInNumber(int num) {
         int largestDigit = Integer.MIN_VALUE;
 
-        while(num > 0) {
+        while (num > 0) {
             int currentDigit = num % 10;
-            if(currentDigit > largestDigit) {
+            if (currentDigit > largestDigit) {
                 largestDigit = currentDigit;
             }
             num /= 10;

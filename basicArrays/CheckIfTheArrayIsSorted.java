@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 class CheckIfSorted {
     public boolean isSorted(int[] numbers, int size) {
-        for(int i = 0; i < size - 1; i++) {
-            if(numbers[i] > numbers[i + 1]) {
+        for (int i = 0; i < size - 1; i++) {
+            if (numbers[i] > numbers[i + 1]) {
                 return false;
             }
         }
@@ -20,7 +20,7 @@ public class CheckIfTheArrayIsSorted {
         int size = scanner.nextInt();
         int[] numbers = new int[size];
         
-        for(int i = 0; i < size; i++) {
+        for (int i = 0; i < size; i++) {
             numbers[i] = scanner.nextInt();
         }
 

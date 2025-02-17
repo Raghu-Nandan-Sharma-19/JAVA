@@ -6,7 +6,7 @@ class PalindromeNumberCheck {
     private int reverseNumber(int num) {
         int reversedNumber = 0;
 
-        while(num > 0) {
+        while (num > 0) {
             int currentDigit = num % 10;
             reversedNumber = (reversedNumber * 10) + currentDigit;
             num /= 10;

@@ -5,13 +5,13 @@ import java.util.Scanner;
 public class SumOfDigitsInAGivenNumber {
     private class Solution {
         public int sumOfDigits(int num) {
-            if(num < 10) {
+            if (num < 10) {
                 return num;
             }
 
             int sum = 0;
-            while(num > 0) {
-                sum += num%10;
+            while (num > 0) {
+                sum += num % 10;
                 num /= 10;
             }
 

@@ -5,10 +5,10 @@ import java.util.Scanner;
 public class SumOfArrayElements {
     private class Solution {
         private int sum(int left, int[] nums, int n) {
-            if(left >= n) {
+            if (left >= n) {
                 return 0;
             }
-            return nums[left]+sum(left+1, nums, n);
+            return nums[left] + sum(left + 1, nums, n);
         }
 
         public int arraySum(int[] nums) {
@@ -22,7 +22,7 @@ public class SumOfArrayElements {
         int n = scanner.nextInt();
         int[] nums = new int[n];
         
-        for(int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             nums[i] = scanner.nextInt();
         }
 

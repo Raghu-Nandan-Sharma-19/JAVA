@@ -8,14 +8,14 @@ class GetSum {
     public int sumOfHighestAndLowestFrequency(int[] arr, int n) {
         Map<Integer, Integer> mpp = new HashMap<>();
 
-        for(var el : arr) {
+        for (var el : arr) {
             mpp.put(el, mpp.getOrDefault(el, 0) + 1);
         }
 
         int maxFrequency = Integer.MIN_VALUE;
         int minFrequency = Integer.MAX_VALUE;
 
-        for(Map.Entry<Integer, Integer> it : mpp.entrySet()) {
+        for (Map.Entry<Integer, Integer> it : mpp.entrySet()) {
             int frequency = it.getValue();
             maxFrequency = Integer.max(maxFrequency, frequency);
             minFrequency = Integer.min(minFrequency, frequency);
@@ -31,7 +31,7 @@ public class SumOfHighestAndLowestFrequency {
         int n = scanner.nextInt();
         int[] arr = new int[n];
 
-        for(int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             arr[i] = scanner.nextInt();
         }
 

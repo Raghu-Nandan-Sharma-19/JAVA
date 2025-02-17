@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class SumOfFirstNNaturalNumbers {
     private class Solution {
         public int nNumbersSum(int n) {
-            if(n <= 1) return 1;
-            return n+nNumbersSum(n-1);
+            if (n <= 1) return 1;
+            return n + nNumbersSum(n - 1);
         }
     }
 

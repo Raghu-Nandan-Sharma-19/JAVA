@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 class PrimeNumberCount {
     private boolean isPrime(int num) {
-        if(num <= 1) return false;
+        if (num <= 1) return false;
         
-        for(int i = 2; i * i <= num; i++) {
-            if(num % i == 0) return false;
+        for (int i = 2; i * i <= num; i++) {
+            if (num % i == 0) return false;
         }
 
         return true;
@@ -16,8 +16,8 @@ class PrimeNumberCount {
     public int countPrimeNumbers(int num) {
         int countOfPrimes = 0;
         
-        for(int i = 2; i <= num; i++) {
-            if(isPrime(i)) {
+        for (int i = 2; i <= num; i++) {
+            if (isPrime(i)) {
                 countOfPrimes++;
             }
         }

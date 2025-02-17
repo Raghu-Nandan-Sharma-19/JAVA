@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 class CountDigits {
     public int countAllDigits(int num) {
-        if(num == 0) return 1;
+        if (num == 0) return 1;
         int cnt = 0;
 
-        while(num > 0) {
+        while (num > 0) {
             num /= 10;
             cnt++;            
         }

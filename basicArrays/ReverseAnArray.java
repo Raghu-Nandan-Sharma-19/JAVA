@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 class ReverseArray {
     private void display(int[] numbers, int size) {
-        for(int i = 0; i < size; i++) {
+        for (int i = 0; i < size; i++) {
             System.out.print(numbers[i] + " ");
         }
         System.out.println();
@@ -19,7 +19,7 @@ class ReverseArray {
     public void reverse(int[] numbers, int size) {
         int start = 0, end = size - 1;
         
-        while(start < end) {
+        while (start < end) {
             swap(numbers, start, end);
             start++;
             end--;
@@ -35,7 +35,7 @@ public class ReverseAnArray {
         int size = scanner.nextInt();
         int[] numbers = new int[size];
         
-        for(int i = 0; i < size; i++) {
+        for (int i = 0; i < size; i++) {
             numbers[i] = scanner.nextInt();
         }
 

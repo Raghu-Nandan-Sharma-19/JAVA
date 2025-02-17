@@ -10,16 +10,16 @@ public class NumberHashing {
         int n = scanner.nextInt();
         int[] arr = new int[n];
         
-        for(int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             arr[i] = scanner.nextInt();
         }
 
         Map<Integer, Integer> map = new HashMap<>();
-        for(int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             map.put(arr[i], map.getOrDefault(arr[i], 0) + 1);
         }
-        // for(int i = 0; i < n; i++) {
-        //     if(!map.containsKey(arr[i])) {
+        // for (int i = 0; i < n; i++) {
+        //     if (!map.containsKey(arr[i])) {
         //         map.put(arr[i], 1);
         //     } else {
         //         map.put(arr[i], map.get(arr[i]) + 1);
@@ -27,7 +27,7 @@ public class NumberHashing {
         // }
 
         int q = scanner.nextInt();
-        while(q-- > 0) {
+        while (q-- > 0) {
             int num = scanner.nextInt();
             System.out.println(num + " -> " + map.get(num));
         }

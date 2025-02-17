@@ -8,8 +8,8 @@ class GetLongestPrefix {
         int n = v.length;
         String first = v[0], last = v[n - 1];
 
-        for(int i = 0; i < Math.min(first.length(), last.length()); i++) {
-            if(first.charAt(i) != last.charAt(i)) {
+        for (int i = 0; i < Math.min(first.length(), last.length()); i++) {
+            if (first.charAt(i) != last.charAt(i)) {
                 return ans.toString();
             }
             ans.append(first.charAt(i));
@@ -25,7 +25,7 @@ public class LongestCommonPrefix {
         int n = scanner.nextInt();
         String[] v = new String[n];
         
-        for(int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             v[i] = scanner.next();
         }
 

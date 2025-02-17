@@ -5,15 +5,15 @@ import java.util.Scanner;
 public class CheckIfAStringIsPalindromeOrNot {
     private class Solution {
         private boolean isPalindrome(String s, int left, int right) {
-            if(left >= right) {
+            if (left >= right) {
                 return true;
             }
             
-            if(s.charAt(left) != s.charAt(right)) {
+            if (s.charAt(left) != s.charAt(right)) {
                 return false;
             }
 
-            return isPalindrome(s, left+1, right-1);
+            return isPalindrome(s, left + 1, right - 1);
         }
 
         public boolean palindromeCheck(String s) {

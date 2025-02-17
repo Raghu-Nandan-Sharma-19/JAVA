@@ -12,11 +12,11 @@ public class ReverseAString {
         }
 
         private void reverse(Vector<Character> s, int left, int right) {
-            if(left >= right) {
+            if (left >= right) {
                 return;
             }
             swap(s, left, right);
-            reverse(s, left+1, right-1);
+            reverse(s, left + 1, right - 1);
         }
 
         public Vector<Character> reverseString(Vector<Character> s) {
@@ -32,7 +32,7 @@ public class ReverseAString {
         int n = scanner.nextInt();
         Vector<Character> s = new Vector<>();
 
-        for(int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             char element = scanner.next().charAt(0);
             s.add(element);
         }
@@ -40,7 +40,7 @@ public class ReverseAString {
         Solution sol = new ReverseAString().new Solution();
         Vector<Character> ans = sol.reverseString(s);
         
-        for(Character el : ans) {
+        for (Character el : ans) {
             System.out.print(el + " ");
         }
         System.out.println();

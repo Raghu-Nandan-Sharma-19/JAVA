@@ -10,17 +10,17 @@ public class CharacterHashing {
         int n = scanner.nextInt();
         char[] arr = new char[n];
 
-        for(int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             arr[i] = scanner.next().charAt(0);
         }
 
         Map<Character, Integer> map = new HashMap<>();
-        for(int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             map.put(arr[i], map.getOrDefault(arr[i], 0) + 1);
         }
 
         int q = scanner.nextInt();
-        while(q-- > 0) {
+        while (q-- > 0) {
             char ch = scanner.next().charAt(0);
             System.out.println(ch + " -> " + map.get(ch));
         }

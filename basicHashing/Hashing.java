@@ -42,17 +42,17 @@ public class Hashing {
         System.out.println();
 
         // Traversing all entries of HashMap --> Multiple methods
-        for(String key : map.keySet()) {
+        for (String key : map.keySet()) {
             System.out.printf("Age of %s is %d\n", key, map.get(key));
         }
         System.out.println();
 
-        for(Map.Entry<String, Integer> e : map.entrySet()) {
+        for (Map.Entry<String, Integer> e : map.entrySet()) {
             System.out.println("Age of " + e.getKey() + " is : " + e.getValue());
         }
         System.out.println();
 
-        for(var e : map.entrySet()) {
+        for (var e : map.entrySet()) {
             System.out.println("Age of " + e.getKey() + " is : " + e.getValue());
         }
         System.out.println();

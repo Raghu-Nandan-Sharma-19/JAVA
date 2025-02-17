@@ -3,7 +3,7 @@ import java.util.Vector;
 
 class ReverseString {
     private void print(Vector<Character> s) {
-        for(int i = 0; i < s.size(); i++) {
+        for (int i = 0; i < s.size(); i++) {
             System.out.print(s.get(i) + " ");
         }
         System.out.println();
@@ -12,7 +12,7 @@ class ReverseString {
     public void reverse(Vector<Character> s) {
         int start = 0, end = s.size() - 1;
         
-        while(start < end) {
+        while (start < end) {
             char temp = s.get(start);
             s.set(start, s.get(end));
             s.set(end, temp);
@@ -30,7 +30,7 @@ public class ReverseAString {
         int n = scanner.nextInt();
         Vector<Character> s = new Vector<>();
         
-        for(int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             char element = scanner.next().charAt(0);
             s.add(element);
         }

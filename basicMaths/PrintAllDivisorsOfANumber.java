@@ -8,9 +8,9 @@ class GetDivisors {
     public ArrayList<Integer> getAllDivisors(int num) {
         ArrayList<Integer> divisors = new ArrayList<>();
         
-        for(int i = 1; i * i <= num; i++) {
-            if(num % i == 0) divisors.add(i);
-            if(i != (num / i)) divisors.add(num / i);
+        for (int i = 1; i * i <= num; i++) {
+            if (num % i == 0) divisors.add(i);
+            if (i != (num / i)) divisors.add(num / i);
         }
 
         return divisors;
@@ -20,7 +20,7 @@ class GetDivisors {
 public class PrintAllDivisorsOfANumber {
     public static void print(ArrayList<Integer> divisors) {
         Collections.sort(divisors);
-        for(Integer divisor : divisors) {
+        for (Integer divisor : divisors) {
             System.out.print(divisor + " ");
         }
         System.out.println();

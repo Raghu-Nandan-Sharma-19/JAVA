@@ -8,7 +8,7 @@ class GetArraySum {
         int n = numbers.size();
         int sum = 0;
 
-        for(int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             sum += numbers.get(i);
         }
 
@@ -22,7 +22,7 @@ public class SumOfArrayElements {
         int size = scanner.nextInt();
         ArrayList<Integer> numbers = new ArrayList<>();
 
-        for(int i = 0; i < size; i++) {
+        for (int i = 0; i < size; i++) {
             int number = scanner.nextInt();
             numbers.add(number);
         }

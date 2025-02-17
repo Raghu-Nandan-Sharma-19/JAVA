@@ -5,12 +5,18 @@ import java.util.Scanner;
 public class MaximumConsecutiveOnes {
     private class Solution {
         public int findMaxConsecutiveOnes(int[] nums) {
+            // size of the array
             int n = nums.length;
+            // intializing the consecutive count and max consecutive count as 0
             int cnt = 0, maximum = 0;
 
-            for(int i = 0; i < n; i++) {
-                if(nums[i] == 1) {
+            for (int i = 0; i < n; i++) {
+                // if current element is equal to 1
+                if (nums[i] == 1) {
+                    // increasing the consecutive count by 1
                     cnt++;
+                    /* updating the max consecutive count with the max of maximum
+                    * consecutive count and count */ 
                     maximum = Math.max(maximum, cnt);
                 } else {
                     cnt = 0;
@@ -26,7 +32,7 @@ public class MaximumConsecutiveOnes {
         int n = scanner.nextInt();
         int[] nums = new int[n];
 
-        for(int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             nums[i] = scanner.nextInt();
         }
 

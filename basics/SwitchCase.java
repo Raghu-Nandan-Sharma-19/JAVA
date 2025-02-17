@@ -7,7 +7,7 @@ public class SwitchCase {
         Scanner scanner = new Scanner(System.in);
         int day = scanner.nextInt();
         
-        switch(day) {
+        switch (day) {
             case 1:
                 System.out.println("Monday");
                 break;

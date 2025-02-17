@@ -8,7 +8,7 @@ class PrintN {
             return;
         }
         System.out.println(x);
-        print(x, n-1);
+        print(x, n - 1);
     }
 }
 

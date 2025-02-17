@@ -4,12 +4,12 @@ import java.util.Scanner;
 
 class CountOddDigits {
     public int countOdd(int num) {
-        if(num == 0) return 0;
+        if (num == 0) return 0;
         int cntOddDigits = 0;
         
-        while(num > 0) {
+        while (num > 0) {
             int currentDigit = num % 10;
-            if(currentDigit % 2 == 1) {
+            if (currentDigit % 2 == 1) {
                 cntOddDigits++;
             }
             num /= 10;

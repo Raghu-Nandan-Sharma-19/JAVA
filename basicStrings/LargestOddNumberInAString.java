@@ -5,19 +5,19 @@ class GetLargestOdd {
         int j = -1;
         int n = s.length();
 
-        for(int i = n - 1; i >= 0; i--) {
+        for (int i = n - 1; i >= 0; i--) {
             // converting to integer
-            if((s.charAt(i) - '0') % 2 == 1) {
+            if ((s.charAt(i) - '0') % 2 == 1) {
                 j = i;
                 break;
             }
         }
 
-        if(j == -1) return "";
+        if (j == -1) return "";
 
         int i = 0;
-        while(i < n) {
-            if(s.charAt(i) != '0') break;
+        while (i < n) {
+            if (s.charAt(i) != '0') break;
             i++;
         }
 

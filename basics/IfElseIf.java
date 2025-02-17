@@ -17,13 +17,13 @@ public class IfElseIf {
         Scanner scanner = new Scanner(System.in);
         int marks = scanner.nextInt();
 
-        if(marks >= 90) {
+        if (marks >= 90) {
             System.out.println("Grade A");
-        } else if(marks >= 70) {
+        } else if (marks >= 70) {
             System.out.println("Grade B");            
-        } else if(marks >= 50) {
+        } else if (marks >= 50) {
             System.out.println("Grade C");
-        } else if(marks >= 35) {
+        } else if (marks >= 35) {
             System.out.println("Grade D");
         } else {
             System.out.println("Fail");

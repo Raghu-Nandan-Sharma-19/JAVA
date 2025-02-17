@@ -5,15 +5,15 @@ import java.util.Scanner;
 public class CheckIfANumberIsPrimeOrNot {
     private class Solution {
         private boolean isPrime(int num, int x) {
-            if(x*x > num) {
+            if (x * x > num) {
                 return true;
             }
 
-            if(num%x == 0) {
+            if (num % x == 0) {
                 return false;
             }
 
-            return isPrime(num, x+1);
+            return isPrime(num, x + 1);
         }
 
         public boolean checkPrime(int num) {

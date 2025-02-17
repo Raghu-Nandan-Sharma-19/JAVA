@@ -7,8 +7,8 @@ public class LinearSearch {
         public int linearSearch(int[] nums, int target) {
             int n = nums.length;
 
-            for(int i = 0; i < n; i++) {
-                if(nums[i] == target) return i;
+            for (int i = 0; i < n; i++) {
+                if (nums[i] == target) return i;
             }
 
             return -1;
@@ -20,7 +20,7 @@ public class LinearSearch {
         int n = scanner.nextInt();
         int[] nums = new int[n];
 
-        for(int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             nums[i] = scanner.nextInt();
         }
 

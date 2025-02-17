@@ -8,7 +8,7 @@ public class SumOfArray {
         int size = scanner.nextInt();
         int[] numbers = new int[size];
 
-        for(int i = 0; i < size; i++) {
+        for (int i = 0; i < size; i++) {
             numbers[i] = scanner.nextInt();
         }
 
@@ -17,7 +17,7 @@ public class SumOfArray {
         //     sum += numbers[i];
         // }
 
-        for(int number : numbers) {
+        for (int number : numbers) {
             sum += number;
         }
 
