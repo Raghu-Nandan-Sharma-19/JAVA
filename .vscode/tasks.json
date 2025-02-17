@@ -2,16 +2,12 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Compile and run",
+            "label": "Compile and run Java",
             "type": "shell",
-            "command": "",
+            "command": "bash",
             "args": [
-                "java",
-                "${relativeFile}",
-                "<",
-                "input.txt",
-                ">",
-                "output.txt"
+                "-c",
+                "javac ${file} && java -cp ${fileDirname} ${fileBasenameNoExtension} < input.txt > output.txt && rm ${fileDirname}/*.class"
             ],
             "presentation": {
                 "reveal": "never"
@@ -21,20 +17,19 @@
                 "isDefault": true
             },
             "problemMatcher": {
-                "owner": "py",
+                "owner": "java",
                 "fileLocation": [
                     "relative",
                     "${workspaceRoot}"
                 ],
                 "pattern": {
-                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                    "regexp": "^(.*\\.java):(\\d+):\\s+(error):\\s+(.*)$",
                     "file": 1,
                     "line": 2,
-                    "column": 3,
-                    "severity": 4,
-                    "message": 5
+                    "severity": 3,
+                    "message": 4
                 }
             }
         }
     ]
-}
+  }
