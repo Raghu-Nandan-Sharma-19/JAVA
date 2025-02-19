@@ -7,7 +7,7 @@
             "command": "bash",
             "args": [
                 "-c",
-                "javac ${file} && java -cp ${fileDirname} ${fileBasenameNoExtension} < input.txt > output.txt && rm ${fileDirname}/*.class"
+                "javac ${file} && java -cp ${workspaceFolder} arrays.faqMedium.${fileBasenameNoExtension} < input.txt > output.txt && rm ${fileDirname}/*.class"
             ],
             "presentation": {
                 "reveal": "never"
