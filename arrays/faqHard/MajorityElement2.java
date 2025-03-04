@@ -29,7 +29,7 @@ public class MajorityElement2 {
                 }
             }
 
-            List<Integer> result = new ArrayList<>();
+            List<Integer> result = new ArrayList<>();  
             cnt1 = 0;
             cnt2 = 0;
 
