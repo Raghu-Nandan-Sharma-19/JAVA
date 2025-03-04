@@ -1,26 +1,33 @@
 package arrays.faqHard;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 public class MajorityElement1 {
     private static class Solution {
         public int majorityElement(int[] nums) {
             int n = nums.length;
-            HashMap<Integer, Integer> mpp = new HashMap<>();
+            int el = Integer.MIN_VALUE;
+            int cnt = 0;
 
-            for (int num : nums) {
-                mpp.put(num, mpp.getOrDefault(num, 0) + 1);
-            }
-
-            for (Map.Entry<Integer, Integer> it : mpp.entrySet()) {
-                if (it.getValue() > (n / 2)) {
-                    return it.getKey();
+            for (int i = 0; i < n; i++) {
+                if (cnt == 0) {
+                    el = nums[i];
+                    cnt = 1;
+                } else if (el == nums[i]) {
+                    cnt++;
+                } else {
+                    cnt--;
                 }
             }
 
-            return -1;
+            cnt = 0;
+            for (int i = 0; i < n; i++) {
+                if (el == nums[i]) {
+                    cnt++;
+                }
+            }
+
+            return cnt > (n / 2) ? el : -1;
         }
     }
 
