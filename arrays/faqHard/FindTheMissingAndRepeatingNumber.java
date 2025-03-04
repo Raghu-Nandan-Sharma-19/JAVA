@@ -4,29 +4,41 @@ import java.util.Scanner;
 
 public class FindTheMissingAndRepeatingNumber {
     private static class Solution {
+        /**
+         * Finds the missing and repeating numbers in the array.
+         * @param nums The input array containing numbers from 1 to n with one missing and one repeating.
+         * @return An array containing the repeating number and the missing number.
+         */
         public int[] findMissingRepeatingNumbers(int[] nums) {
             int n = nums.length;
-            int missing = -1;
-            int repeating = -1;
-            int[] hash = new int[n + 1];
+            // Calculate the sum of first n natural numbers
+            long sN = (n * (n + 1)) / 2;
+            // Calculate the sum of squares of first n natural numbers
+            long s2N = (n * (n + 1) * (2 * n + 1)) / 6;
+            long s = 0;
+            long s2 = 0;
 
+            // Calculate the sum and sum of squares of the array elements
             for (int i = 0; i < n; i++) {
-                hash[nums[i]]++;
+                s += nums[i];
+                s2 += ((long) (nums[i]) * (long) (nums[i]));
             }
 
-            for (int i = 1; i <= n; i++) {
-                if (hash[i] == 0) {
-                    missing = i;
-                } else if (hash[i] == 2) {
-                    repeating = i;
-                }
+            // Calculate the difference between the expected and actual sums
+            long val1 = s - sN;
+            // Calculate the difference between the expected and actual sum of squares
+            long val2 = s2 - s2N;
 
-                if (repeating != -1 && missing != -1) {
-                    break;
-                }
-            }
-
-            return new int[]{repeating, missing};
+            // Divide val2 by val1 to get the sum of the missing and repeating numbers
+            val2 = val2 / val1;
+            
+            // Calculate the repeating number
+            long x = (val1 + val2) / 2;
+            // Calculate the missing number
+            long y = x - val1;
+            
+            // Return the repeating and missing numbers
+            return new int[]{(int) (x), (int) (y)};
         }
     }
     
