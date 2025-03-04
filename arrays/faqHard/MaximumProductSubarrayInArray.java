@@ -9,13 +9,11 @@ public class MaximumProductSubarrayInArray {
             int maxProd = Integer.MIN_VALUE;
 
             for (int i = 0; i < n; i++) {
+                int prod = 1;
                 for (int j = i; j < n; j++) {
-                    int prod = 1;
-                    for (int k = i; k <= j; k++) {
-                        prod *= nums[k];
-                    }
-                    maxProd = Math.max(maxProd, prod);
+                    prod *= nums[j];
                 }
+                maxProd = Math.max(maxProd, prod);
             }
 
             return maxProd;
