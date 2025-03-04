@@ -1,42 +1,56 @@
 package arrays.faqHard;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class MergeTwoSortedArraysWithoutExtraSpace {
     private static class Solution {
-        // Helper method to swap elements between two arrays
-        private static void swap(int[] nums1, int[] nums2, int idx1, int idx2) {
-            int temp = nums1[idx1];
-            nums1[idx1] = nums2[idx2];
-            nums2[idx2] = temp;
+        // Helper method to swap elements if the element in the first array is greater
+        private void swapIfGreater(int[] arr1, int[] arr2, int idx1, int idx2) {
+            if (arr1[idx1] > arr2[idx2]) {
+                int temp = arr1[idx1];
+                arr1[idx1] = arr2[idx2];
+                arr2[idx2] = temp;
+            }
         }
 
         // Method to merge two sorted arrays without extra space
         public void merge(int[] nums1, int m, int[] nums2, int n) {
-            int left = m - 1;
-            int right = 0;
+            int length = n + m;
+            int gap = (length / 2) + (length % 2);
 
-            // Swap elements to ensure nums1 contains the smallest elements
-            while (left >= 0 && right < n) {
-                if (nums1[left] > nums2[right]) {
-                    swap(nums1, nums2, left, right);
-                    left--;
+            // Perform the gap algorithm to merge arrays
+            while (gap > 0) {
+                int left = 0;
+                int right = left + gap;
+                
+                while (right < length) {
+                    if (left < m && right >= m) {
+                        // Compare and swap elements between nums1 and nums2
+                        swapIfGreater(nums1, nums2, left, right - m);
+                    } else if (left >= m) {
+                        // Compare and swap elements within nums2
+                        swapIfGreater(nums2, nums2, left - m, right - m);
+                    } else {
+                        // Compare and swap elements within nums1
+                        swapIfGreater(nums1, nums1, left, right);
+                    }
+                   
+                    left++;
                     right++;
-                } else {
+                }
+                
+                if (gap == 1) {
                     break;
                 }
+
+                gap = (gap / 2) + (gap % 2);
             }
 
-            // Sort both arrays
-            Arrays.sort(nums1, 0, m);
-            Arrays.sort(nums2); 
-
-            // Copy elements from nums2 to nums1
+            // Copy the merged elements from nums2 to nums1
             for (int i = m; i < m + n; i++) {
                 nums1[i] = nums2[i - m];
             }
-        }
+        }        
     }
     
     public static void main(String[] args) {
