@@ -6,13 +6,23 @@ public class MaxSubarraySumKadanesAlgorithm {
     private static class Solution {
         public int maxSubArray(int[] nums) {
             int n = nums.length;
+            // variables to store sum and max sum
             long maxSum = Long.MIN_VALUE;
+            long sum = 0;
 
+            // iterating through the array
             for (int i = 0; i < n; i++) {
-                long sum = 0;
-                for (int j = i; j < n; j++) {
-                    sum += nums[j];
-                    maxSum = Math.max(sum, maxSum);
+                // add current element of array to sum
+                sum += nums[i];
+                
+                // if sum becomes greater than max sum update max sum with sum
+                if (sum > maxSum) {
+                    maxSum = sum;
+                }
+
+                // if sum becomes negative update sum to zero
+                if (sum < 0) {
+                    sum = 0;
                 }
             }
 
