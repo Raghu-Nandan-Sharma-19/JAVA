@@ -9,11 +9,9 @@ public class MaxSubarraySumKadanesAlgorithm {
             long maxSum = Long.MIN_VALUE;
 
             for (int i = 0; i < n; i++) {
+                long sum = 0;
                 for (int j = i; j < n; j++) {
-                    long sum = 0;
-                    for (int k = i; k <= j; k++) {
-                        sum += nums[k];
-                    }
+                    sum += nums[j];
                     maxSum = Math.max(sum, maxSum);
                 }
             }
