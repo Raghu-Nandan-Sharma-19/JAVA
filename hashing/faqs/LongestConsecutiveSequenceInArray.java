@@ -1,28 +1,46 @@
 package hashing.faqs;
 
-import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Scanner;
 
 public class LongestConsecutiveSequenceInArray {
     // method to find longest consecutive sequence in array
     private static int longestConsecutive(int[] nums) {
-        Arrays.sort(nums);
+        int n = nums.length;
+        // if length of array is 0 return 0
+        if (n == 0) return 0;
+
+        // longest to store longest consecutive sequence
         int longest = 1;
-        int cnt = 0;
-        int lastSmaller = Integer.MIN_VALUE;
-
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] - 1 == lastSmaller) {
-                cnt++;
-                lastSmaller = nums[i];
-            } else if (nums[i] != lastSmaller) {
-                cnt = 1;
-                lastSmaller = nums[i];
-            }
-
-            longest = Math.max(longest, cnt);
+        // hashset to store elements
+        HashSet<Integer> hashSet = new HashSet<>();
+        
+        // adding elements into hashset
+        for (int num : nums) {
+            hashSet.add(num);
         }
 
+        // iterating through hashset
+        for (var it : hashSet) {
+            // if hashset doesn't contains element less than current element of hashset
+            if (!hashSet.contains(it - 1)) {
+                // taking cnt as 1 and x as the current element
+                int cnt = 1;
+                int x = it;
+
+                // if hashset contains current element + 1
+                while (hashSet.contains(x + 1)) {
+                    // incrementing x and cnt
+                    x++;
+                    cnt++;
+                }
+
+                // updating longest with max of longest and cnt
+                longest = Math.max(longest, cnt);
+            }
+        }
+
+        // returning longest consecutive sequence
         return longest;
     }
 
