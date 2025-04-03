@@ -8,17 +8,14 @@ public class LongestSubarrayWithSumK {
         int longest = 0;
 
         for (int i = 0; i  < n; i++) {
+            int sum = 0;
             for (int j = i; j < n; j++) {
-                int sum = 0;
-                
-                for (int l = i; l <= j; l++) {
-                    sum += nums[l];
-                }
+                sum += nums[j];
 
                 if (sum == k) {
                     longest = Math.max(longest, j - i + 1);
                 }
-            }   
+            } 
         }
 
         return longest;
