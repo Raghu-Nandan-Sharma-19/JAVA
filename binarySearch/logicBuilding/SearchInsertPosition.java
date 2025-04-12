@@ -4,15 +4,35 @@ import java.util.Scanner;
 
 public class SearchInsertPosition {
     private static int searchInsert(int[] nums, int target) {
+        // Get the length of the array
         int n = nums.length;
 
-        for (int i = 0; i < n; i++) {
-            if (nums[i] >= target) {
-                return i;
+        // Initialize low pointer for binary search
+        int low = 0;
+
+        // Initialize high pointer for binary search
+        int high = n - 1;
+        
+        // Default answer is n (insert at the end) if target is greater than all elements
+        int ans = n;
+
+        while (low <= high) {
+            // Calculate mid point to avoid overflow
+            int mid = low + (high - low) / 2;
+
+            if (nums[mid] >= target) {
+                // If current element is >= target, we found a potential insertion position
+                ans = mid;
+                // Look for a smaller index in the left half
+                high = mid - 1;
+            } else {
+                // If current element < target, search in the right half
+                low = mid + 1;
             }
         }
 
-        return n;
+        // Return the smallest valid index where target can be inserted
+        return ans;
     }
     
     public static void main(String[] args) {
