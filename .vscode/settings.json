@@ -1,0 +1,7 @@
+{
+    "terminal.integrated.env.linux": {
+      "JAVA_HOME": "/opt/jdk-24",
+      "PATH": "/opt/jdk-24/bin:${env:PATH}"
+    }
+  }
+  
