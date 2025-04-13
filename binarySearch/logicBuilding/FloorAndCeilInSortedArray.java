@@ -3,7 +3,6 @@ package binarySearch.logicBuilding;
 import java.util.Scanner;
 
 public class FloorAndCeilInSortedArray {
-    
     private static int findFloor(int[] nums, int x) {
         // Get array length
         int n = nums.length;
