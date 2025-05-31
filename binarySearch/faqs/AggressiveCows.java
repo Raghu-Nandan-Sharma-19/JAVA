@@ -27,15 +27,20 @@ public class AggressiveCows {
 
         int limit = nums[n - 1] - nums[0];
 
-        for (int distance = 1; distance <= limit; distance++) {
-            if (canWePlace(nums, n, distance, k)) {
-                continue;
-            } else {
-                return (distance - 1);
-            }
-        } 
+        int low = 1;
+        int high = limit;
 
-        return limit;
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+
+            if (canWePlace(nums, n, mid, k)) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+
+        return high;
     }
     
     public static void main(String[] args) {
