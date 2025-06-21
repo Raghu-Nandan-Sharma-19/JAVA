@@ -1,39 +1,45 @@
 package binarySearch.faqs;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MedianOfTwoSortedArrays {
     private static double median(int[] arr1, int[] arr2) {
-        int n1 = arr1.length;
-        int n2 = arr2.length;
+        int n1 = arr1.length, n2 = arr2.length;
         int n = n1 + n2;
-        
-        ArrayList<Integer> arr3 = new ArrayList<>();
-
-        int i = 0;
-        int j = 0;
+        int i = 0, j = 0;
+        int idx2 = n / 2, idx1 = idx2 - 1;
+        int el1 = -1, el2 = -1;
+        int cnt = 0;
 
         while (i < n1 && j < n2) {
-            if (arr1[i] < arr2[j]) arr3.add(arr1[i++]);
-            else arr3.add(arr2[j++]);         
+            if (arr1[i] < arr2[j]) {
+                if (cnt == idx1) el1 = arr1[i];
+                if (cnt == idx2) el2 = arr1[i];
+                cnt++;
+                i++; 
+            } else {
+                if (cnt == idx1) el1 = arr2[j];
+                if (cnt == idx2) el2 = arr2[j];
+                cnt++;
+                j++;
+            }
         }
 
         while (i < n1) {
-            arr3.add(arr1[i++]);
+            if (cnt == idx1) el1 = arr1[i];
+            if (cnt == idx2) el2 = arr1[i];
+            cnt++;
+            i++;
         }
 
         while (j < n2) {
-            arr3.add(arr2[j++]);
+            if (cnt == idx1) el1 = arr2[j];
+            if (cnt == idx2) el2 = arr2[j];
+            cnt++;
+            j++;
         }
 
-        if (n % 2 == 1) {
-            return (double) arr3.get(n / 2);
-        }
-
-        double result = ((double) arr3.get(n / 2) + (double) (arr3.get((n / 2) - 1))) / 2.0;
-    
-        return result;
+        return (n % 2 == 1) ? el2 : ((double) (el1) + (double) (el2)) / 2.0;
     }
     
     public static void main(String[] args) {
