@@ -35,8 +35,7 @@ public class MedianOfTwoSortedArrays {
                 // If condition for finding median
                 if (n % 2 == 1) return Math.max(l1, l2);
                 else return (Math.max(l1, l2) + Math.min(r1, r2)) / 2.0;
-            } 
-            else if (l1 > r2) {
+            } else if (l1 > r2) {
                 // Eliminate the right half of arr1
                 high = mid1 - 1;
             } else {
