@@ -5,41 +5,48 @@ import java.util.Scanner;
 public class MedianOfTwoSortedArrays {
     private static double median(int[] arr1, int[] arr2) {
         int n1 = arr1.length, n2 = arr2.length;
-        int n = n1 + n2;
-        int i = 0, j = 0;
-        int idx2 = n / 2, idx1 = idx2 - 1;
-        int el1 = -1, el2 = -1;
-        int cnt = 0;
 
-        while (i < n1 && j < n2) {
-            if (arr1[i] < arr2[j]) {
-                if (cnt == idx1) el1 = arr1[i];
-                if (cnt == idx2) el2 = arr1[i];
-                cnt++;
-                i++; 
+        /* Ensure arr1 is not larger than 
+        arr2 to simplify implementation*/
+        if (n1 > n2) return median(arr2, arr1);
+
+        int n = n1 + n2;
+        
+        // Length of left half
+        int left = (n1 + n2 + 1) / 2; 
+
+        // Apply binary search
+        int low = 0, high = n1;
+        while (low <= high) {
+            
+            // Calculate mid index for arr1
+            int mid1 = (low + high) / 2; 
+            
+            // Calculate mid index for arr2
+            int mid2 = left - mid1; 
+
+            // Calculate l1, l2, r1, and r2
+            int l1 = (mid1 > 0) ? arr1[mid1 - 1] : Integer.MIN_VALUE;
+            int r1 = (mid1 < n1) ? arr1[mid1] : Integer.MAX_VALUE;
+            int l2 = (mid2 > 0) ? arr2[mid2 - 1] : Integer.MIN_VALUE;
+            int r2 = (mid2 < n2) ? arr2[mid2] : Integer.MAX_VALUE;
+
+            if (l1 <= r2 && l2 <= r1) {
+                // If condition for finding median
+                if (n % 2 == 1) return Math.max(l1, l2);
+                else return (Math.max(l1, l2) + Math.min(r1, r2)) / 2.0;
+            } 
+            else if (l1 > r2) {
+                // Eliminate the right half of arr1
+                high = mid1 - 1;
             } else {
-                if (cnt == idx1) el1 = arr2[j];
-                if (cnt == idx2) el2 = arr2[j];
-                cnt++;
-                j++;
+                // Eliminate the left half of arr1
+                low = mid1 + 1;
             }
         }
 
-        while (i < n1) {
-            if (cnt == idx1) el1 = arr1[i];
-            if (cnt == idx2) el2 = arr1[i];
-            cnt++;
-            i++;
-        }
-
-        while (j < n2) {
-            if (cnt == idx1) el1 = arr2[j];
-            if (cnt == idx2) el2 = arr2[j];
-            cnt++;
-            j++;
-        }
-
-        return (n % 2 == 1) ? el2 : ((double) (el1) + (double) (el2)) / 2.0;
+        // Dummy statement
+        return 0; 
     }
     
     public static void main(String[] args) {
