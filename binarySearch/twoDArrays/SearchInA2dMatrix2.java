@@ -3,35 +3,31 @@ package binarySearch.twoDArrays;
 import java.util.Scanner;
 
 public class SearchInA2dMatrix2 {
-    private static boolean binarySearch(int[] arr, int target) {
-        int low = 0;
-        int high = arr.length - 1;
-
-        while (low <= high) {
-            int mid = low + (high - low) / 2;
-
-            if (arr[mid] == target) {
-                return true;
-            } else if (arr[mid] < target) {
-                low = mid + 1;
-            } else {
-                high = mid - 1;
-            }
-        }
-
-        return false;
-    }
-    
     private static boolean searchMatrix(int[][] matrix, int target) {
+        // Get the dimensions of the matrix
         int n = matrix.length;
+        int m = matrix[0].length;
         
-        for (int i = 0; i < n; i++) {
-            if (binarySearch(matrix[i], target)) {
-                return true;
+        // Start from the top-right corner of the matrix
+        int row = 0, column = m - 1;
+
+        // Continue searching while we're still within the matrix boundaries
+        while (row < n && column >= 0) {
+            if (matrix[row][column] == target) {
+                return true; // Target found, return true
+            } else if (matrix[row][column] < target) {
+                // Current value is smaller than target
+                // Since values increase as we go down, move to the next row
+                row++;
+            } else {
+                // Current value is larger than target
+                // Since values decrease as we go left, move to the previous column
+                column--;
             }
         }
 
-        return false;
+        // If we've exhausted our search space without finding the target
+        return false; // Target not found in matrix
     }
 
     public static void main(String[] args) {
