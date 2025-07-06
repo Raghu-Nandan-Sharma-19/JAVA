@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class CombinationSum {
+public class CombinationSum1 {
     private static void func(List<Integer> v, int i, int sum, List<Integer> v2, List<List<Integer>> ans) {
         // Base case: If sum becomes 0, we found a valid combination
         if (sum == 0) {
